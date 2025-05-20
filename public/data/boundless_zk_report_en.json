@@ -1,0 +1,29 @@
+{
+  "title": "Research Report on the Boundless ZK Protocol",
+  "sections": [
+    {
+      "heading": "1. What is Boundless?",
+      "content": "Boundless is a general-purpose zero-knowledge (ZK) computing protocol designed to overcome the computational limitations of blockchains. In traditional blockchains, every node must re-execute every transaction, which limits speed and scalability. Boundless addresses this issue by performing complex computations off-chain and generating ZK proofs, which can then be verified on-chain quickly and efficiently."
+    },
+    {
+      "heading": "2. Technical Architecture Overview",
+      "content": "Boundless is structured in two main parts: an off-chain prover network that performs computations and generates proofs, and a smart contract-based market that verifies and reflects the results. Developers submit computation requests, and provers execute them, generating proofs which are submitted to the market. Provers are only rewarded if they successfully complete the tasks, creating a naturally trustworthy environment. Provers use RISC Zero's zkVM to run programs written in Rust. Boundless also provides a dedicated prover cluster system called Bento, which utilizes multi-machine and multi-GPU setups to rapidly generate ZK proofs, with features for workload distribution and retry mechanisms."
+    },
+    {
+      "heading": "3. Integration with Smart Contracts",
+      "content": "Boundless integrates with blockchains via smart contracts written in Solidity. Developers can submit computation requests through the Boundless market contract, and submit the completed proofs for verification. Payments between users and provers are handled automatically, and incorrect or failed work results in no reward. Boundless is designed to be chain-agnostic and can be easily integrated into various L1 and L2 chains. It currently operates on the Sepolia testnet, with mainnet support planned. Developers can process heavy computations off-chain and bring only short proofs on-chain, achieving high efficiency and low gas costs."
+    },
+    {
+      "heading": "4. Developer Usability",
+      "content": "Boundless offers tools and templates to make development easy. While writing zkVM programs in Rust may be unfamiliar at first, developers are supported with example templates (e.g., even number check), CLI tools (boundless-cli), Rust SDK, and smart contract examples. The end-to-end process—writing programs, requesting proofs, receiving results, and submitting to smart contracts—is automated with sample projects to lower the entry barrier. The CLI also supports proof requests, deposits, withdrawals, and status checks, making it ideal for testing. Documentation is well-structured for fast onboarding."
+    },
+    {
+      "heading": "5. Comparison with Similar Platforms",
+      "content": "Boundless serves as a general-purpose computation infrastructure, differing in goal from Farcaster and Lens (social graph) or XMTP (messaging). However, all share a structural similarity in 'decentralization + off-chain processing + on-chain verification.' Boundless operates at a lower infrastructure level, making arbitrary computation verifiable. This allows it to support projects such as AI result verification, DEX liquidity calculations, or multi-chain data aggregation."
+    },
+    {
+      "heading": "6. Ecosystem and Scalability",
+      "content": "Boundless connects developers and provers through a marketplace model. Developers register computation tasks, and provers perform them to earn rewards. An efficient reverse auction mechanism ensures optimal pricing. A token-based incentive model using $ZKC is also planned. As the number of provers increases, the network's computational capacity scales linearly. Boundless also supports aggregation of multiple proofs to reduce on-chain costs. It is gaining attention as a foundational technology enabling blockchain apps to overcome computation bottlenecks. For projects prioritizing decentralization and performance, Boundless offers a highly beneficial architecture."
+    }
+  ]
+}
