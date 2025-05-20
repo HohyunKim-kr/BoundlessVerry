@@ -1,5 +1,3 @@
-import React from "react";
-
 const Boundless = () => {
   return (
     <div className="bg-gradient-to-b from-black via-gray-900 to-gray-800 min-h-screen text-white px-6 py-12">
